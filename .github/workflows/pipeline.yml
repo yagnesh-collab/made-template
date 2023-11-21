@@ -3,7 +3,9 @@ name: Data Pipeline
 on:
   push:
     branches:
-      - main
+      paths:
+            - data/**
+            - project/**
 
 jobs:
   run_pipeline:
@@ -24,6 +26,6 @@ jobs:
 
     - name: Run Pipeline
       run: |
-        chmod +x ./main/project/pipeline.sh
-        cd ./main/project
+        cd project
+        chmod +x pipeline.sh
         ./pipeline.sh
