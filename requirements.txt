@@ -1,0 +1,9 @@
+pandas
+numpy
+pytest
+pytest-dependency
+openpyxl
+zipfile
+shutil
+sqlite3
+kaggle
