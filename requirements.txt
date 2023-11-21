@@ -3,6 +3,4 @@ numpy
 pytest
 pytest-dependency
 openpyxl
-shutil
-sqlite3
 kaggle
