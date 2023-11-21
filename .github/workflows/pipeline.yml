@@ -24,4 +24,5 @@ jobs:
 
     - name: Run Pipeline
       run: |
+        chmod u+r+x ./project/pipeline.sh
         ./project/pipeline.sh
