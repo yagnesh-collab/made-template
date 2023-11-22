@@ -22,7 +22,13 @@ jobs:
       run: |
         pip install -r ./requirements.txt  
         python -m pip install --upgrade pip
-        
+        pip install kaggle
+
+    - name: Setup Kaggle
+      run: |
+        mkdir $HOME/.kaggle
+        echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > $HOME/.kaggle/kaggle.json
+        chmod 600 $HOME/.kaggle/kaggle.json
 
     - name: Run Pipeline
       run: |
