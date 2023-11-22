@@ -34,3 +34,8 @@ jobs:
       run: |
         chmod u+r+x ./project/pipeline.sh
         ./project/pipeline.sh
+
+    - name: Check file existence
+      uses: andstor/file-existence-action@v2
+      with:
+          files: "data/co2_emission.csv, data/co2_emission.db, data/renewables_data.csv, data/renewables_data.db"
