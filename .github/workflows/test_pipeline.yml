@@ -1,0 +1,36 @@
+name: Project work 4 Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install Dependencies
+      run: |
+        pip install -r ./requirements.txt  
+        python -m pip install --upgrade pip
+        pip install kaggle
+
+    - name: Setup Kaggle
+      run: |
+        mkdir $HOME/.kaggle
+        echo '{"username":"${{ secrets.KAGGLE_USERNAME }}","key":"${{ secrets.KAGGLE_KEY }}"}' > $HOME/.kaggle/kaggle.json
+        chmod 600 $HOME/.kaggle/kaggle.json
+
+    - name: Run Pipeline
+      run: |
+        chmod u+r+x ./project/tests.sh
+        ./project/tests.sh
