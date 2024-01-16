@@ -5,4 +5,4 @@ The escalating concerns about climate change have driven efforts to explore sust
 
 
 ### Project report 📄
-For detailed findings and insights, please refer to the [Project Report](https://github.com/yagnesh-collab/made-template/project/report.ipynb).
+For detailed findings and insights, please refer to the [Project Report](https://github.com/yagnesh-collab/made-template/tree/main/project/report.ipynb).
